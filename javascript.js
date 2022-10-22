@@ -33,7 +33,7 @@ const getComputerChoice = () => {
 }
 const input = prompt("Rock, Paper or Scissor?");
 
-const playerSelection = input;
+const playerSelection = input.charAt(0).toUpperCase() + input.slice(1).toLowerCase();
 
 console.log(playerSelection);
 
