@@ -16,30 +16,56 @@
 //The computer compares the 2 answers and gives the user a text based on that
 //Write a NEW function called game(). Call the playRound function inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end.
 
-let input = prompt("Rock, paper or scissor?");
-
-let playerSelection = input;
-console.log(input);
 
 const getComputerChoice = () => {
-  let randomNumber = Math.floor(Math.random()*3);
+  const randomNumber = Math.floor(Math.random()*3);
   switch (randomNumber) {
     case 0:
-      return "rock";
+      return "Rock";
       break;
     case 1:
-      return "paper";
+      return "Paper";
       break;
     case 2:
-      return "scissor";
+      return "Scissor";
       break;
   }
 }
+const input = prompt("Rock, Paper or Scissor?");
 
-let computerSelection = getComputerChoice();
+const playerSelection = input;
 
-console.log(getComputerChoice());
+console.log(playerSelection);
 
-function playRound (playerSelection, computerSelection) {
-  
+const computerSelection = getComputerChoice();
+
+console.log(computerSelection);
+
+function playRound(playerSelection, computerSelection) {
+if (playerSelection === computerSelection){
+  return ("It's a Tie!");
 }
+else if (playerSelection === "Rock") {
+  if (computerSelection === "Scissor") {
+    return ("You Win! Rock beats Scissor");
+  }
+  else 
+    return ("You Lose! Paper beats Rock");
+  }
+else if (playerSelection === "Paper") {
+  if (computerSelection === "Rock") {
+    return ("You Win! Paper beats Rock");
+  }
+  else 
+    return ("You Lose! Scissor beats Paper");
+}
+else if (playerSelection === "Scissor") {
+  if (computerSelection === "Paper") {
+    return ("You Win! Scissor beats Paper");
+  }
+  else 
+    return ("You Lose! Rock beats Scissor");
+}
+}
+
+console.log(playRound(playerSelection, computerSelection));
