@@ -41,7 +41,14 @@ const computerSelection = getComputerChoice();
 
 console.log(computerSelection);
 
+let round = 5;
+
+function roundUp() {
+  round += 1;
+}
+
 function playRound(playerSelection, computerSelection) {
+  let round = 1
 if (playerSelection === computerSelection){
   return ("It's a Tie!");
 }
@@ -69,3 +76,10 @@ else if (playerSelection === "Scissor") {
 }
 
 console.log(playRound(playerSelection, computerSelection));
+
+function game() {
+  for (let i = 0; i < 5; i++) {
+    playRound 
+    //This part is not done yet, just ignore it for now guys
+  }
+}
