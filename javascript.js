@@ -34,31 +34,31 @@ else
   return ("You Lose! " + computerSelection + " beats " + playerSelection + ". Player: " + playerScore + " Computer: " + (computerScore +=1) )
 }
 
-//this one shows the You Win or You Lose in the console
+//this loop shows the You Win or You Lose in the console after someone got 5 points
 function game() {
-  for (let i = 0; i < 5; i++) {
-  console.log(playRound())}
-  if (computerScore === playerScore) {
-    return console.log("You have the same score! It's a tie! To replay the game refresh the page!")
-     }
-   else if (computerScore > playerScore) {
+  while (computerScore !== 5 || playerScore !==5) {
+  console.log(playRound())
+    if (computerScore ===5) {
      return console.log("You lost the game! To replay the game refresh the page!")
      }
-   else 
+   else if (playerScore ===5){
      return console.log("You won the game! To replay the game refresh the page!")
-   
+   }
+   }
 }
 
 game();
 
-
-
-//let answer = parseInt(prompt("Please enter the number you would like to FizzBuzz up to: "));
-//for (let i = 1; i <= answer; i++) {
-//  if (i % 3 === 0) {
-//    console.log("Fizz");
-//  } else {
-//    console.log(i);
-//  }
+//This is the previous code I used for the game() function. This one allows only 5 rounds and the winner is whoever had the most points.
+//function game() {
+//  for (let i = 0; i < 5; i++) {
+//  console.log(playRound())}
+//  if (computerScore === playerScore) {
+//    return console.log("You have the same score! It's a tie! To replay the game refresh the page!")
+//     }
+//   else if (computerScore > playerScore) {
+//     return console.log("You lost the game! To replay the game refresh the page!")
+//     }
+//   else 
+//     return console.log("You won the game! To replay the game refresh the page!")   
 //}
-
