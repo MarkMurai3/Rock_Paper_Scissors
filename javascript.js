@@ -1,56 +1,64 @@
+
+//this one generates the computer's answer
+const getComputerChoice = () => ["Rock","Paper","Scissor"][Math.floor(Math.random()*3)];
+
+//this one I found online and I am too afraid to delete because it may come in handy
+//function getPlayerSelection(){
+//  return window.prompt("Enter your choice:").toLowerCase()
+//}
+
 let playerScore = 0
 let computerScore = 0
-const buttons = document.querySelectorAll('input')
 
-function computerPlay() {
-    let choices = ['Rock', 'Paper', 'Scissors']
-    return choices[Math.floor(Math.random() * choices.length)]
+
+//this one generates the Winner and Loser 
+function playRound() {
+//this one inputs the player's answer
+let input = prompt("Rock, Paper or Scissor?");
+let playerSelection = input.charAt(0).toUpperCase() + input.slice(1).toLowerCase();
+console.log(playerSelection);
+//this one shows the Computer's answer
+let computerSelection = getComputerChoice();
+console.log(computerSelection);
+if (playerSelection === computerSelection){
+  return ("It's a Tie!" + " Player: " + (playerScore) + " Computer: " + computerScore) ;
 }
+else if ((playerSelection == "Rock" && computerSelection == "Scissor") ||
+        (playerSelection == "Paper" && computerSelection == "Rock") ||
+        (playerSelection == "Scissor" && computerSelection == "Paper"))
 
-function disableButtons() {
-    buttons.forEach(elem => {
-        elem.disabled = true
-    })
-}
-
-function playRound(playerSelection) {
-    let computerSelection = computerPlay()
-    let result = ""
-
-    if ((playerSelection == 'Rock' && computerSelection == 'Scissors') ||
-        (playerSelection == 'Scissors' && computerSelection == 'Paper') ||
-        (playerSelection == 'Paper' && computerSelection == 'Rock')) {
+        return ("You Win! " + playerSelection + " beats " + computerSelection + ". Player: " + (playerScore += 1) + " Computer: " + computerScore) 
         
-        playerScore += 1
-        result = ('You win! ' + playerSelection + ' beats ' + computerSelection
-            + "<br><br>Player score: " + playerScore + "<br>Computer score: " + computerScore)
-
-        if (playerScore == 5) {
-            result += '<br><br>You won the game! Reload the page to play again'
-            disableButtons()
-        }
-    }
-    else if (playerSelection == computerSelection) {
-        result = ('It\'s a tie. You both chose ' + playerSelection
-            + "<br><br>Player score: " + playerScore + "<br>Computer score: " + computerScore)
-    }
-    else {
-        computerScore += 1
-        result = ('You lose! ' + computerSelection + ' beats ' + playerSelection
-            + "<br><br>Player score: " + playerScore + "<br>Computer score: " + computerScore)
-
-        if (computerScore == 5) {
-            result += '<br><br>I won the game! Reload the page to play again'
-            disableButtons()
-        }
-    }
-
-    document.getElementById('result').innerHTML = result
-    return
+        
+else 
+  return ("You Lose! " + computerSelection + " beats " + playerSelection + ". Player: " + playerScore + " Computer: " + (computerScore +=1) )
 }
 
-buttons.forEach(button =>{
-    button.addEventListener('click', function(){
-        playRound(button.value)
-    })
-})
+//this one shows the You Win or You Lose in the console
+function game() {
+  for (let i = 0; i < 5; i++) {
+  console.log(playRound())}
+  if (computerScore === playerScore) {
+    return console.log("You have the same score! It's a tie! To replay the game refresh the page!")
+     }
+   else if (computerScore > playerScore) {
+     return console.log("You lost the game! To replay the game refresh the page!")
+     }
+   else 
+     return console.log("You won the game! To replay the game refresh the page!")
+   
+}
+
+game();
+
+
+
+//let answer = parseInt(prompt("Please enter the number you would like to FizzBuzz up to: "));
+//for (let i = 1; i <= answer; i++) {
+//  if (i % 3 === 0) {
+//    console.log("Fizz");
+//  } else {
+//    console.log(i);
+//  }
+//}
+
