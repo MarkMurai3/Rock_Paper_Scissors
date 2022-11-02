@@ -14,12 +14,12 @@ function playRound(playerSelection) {
 let computerSelection = getComputerChoice();
 let result = "";
 if (playerSelection === computerSelection){
-  result = ("It's a Tie!" + "You both chose " + playerSelection + ". Player: " + (playerScore) + " Computer: " + computerScore);
+  result = ("It's a Tie!" + "You both chose " + playerSelection + "<br> Player: " + (playerScore) + " Computer: " + computerScore);
 }
 else if ((playerSelection == "Rock" && computerSelection == "Scissors") ||
         (playerSelection == "Paper" && computerSelection == "Rock") ||
         (playerSelection == "Scissors" && computerSelection == "Paper")) {
-        result = ("You Win! " + playerSelection + " beats " + computerSelection + ". Player: " + (playerScore+=1) + " Computer: " + computerScore)
+        result = ("You Win! " + "The computer chose " + computerSelection + " and " + playerSelection + " beats " + computerSelection + "<br> Player: " + (playerScore+=1) + " Computer: " + computerScore)
 
         if (playerScore == 5) {
           result += "<br>You have won the game! Congratulations!"
@@ -30,7 +30,7 @@ else if ((playerSelection == "Rock" && computerSelection == "Scissors") ||
         
         
 else {
-  result = ("You Lose! " + computerSelection + " beats " + playerSelection + ". Player: " + playerScore + " Computer: " + (computerScore +=1))
+  result = ("You Lose! " + 'The computer chose ' + computerSelection + " and " + computerSelection + " beats " + playerSelection + "<br> Player: " + playerScore + " Computer: " + (computerScore +=1))
   if (computerScore == 5) {
     result += "<br>You have lost the game! Sucker!"
     disableButtons();
