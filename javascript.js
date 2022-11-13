@@ -24,6 +24,7 @@ else if ((playerSelection == "Rock" && computerSelection == "Scissors") ||
         if (playerScore == 5) {
           result += "<br>You have won the game! Congratulations!"
           disableButtons();
+          alert("You have won the game. Reload the page to play again");
         }
         }
         
@@ -34,6 +35,7 @@ else {
   if (computerScore == 5) {
     result += "<br>You have lost the game! Sucker!"
     disableButtons();
+    alert("You have lost the game. Reload the page to play again");
   }
 }
 document.getElementById('result').innerHTML = result

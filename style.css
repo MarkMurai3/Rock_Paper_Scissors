@@ -1,0 +1,68 @@
+body {
+    background-color: solid black;
+    background: url(background.jpeg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    display: flex;
+    align-items: center;
+    color:rgb(255, 0, 0);
+    font-family: 'Neon Lights';
+    font-size: 70px;
+  text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+     
+      0 0 92px rgb(255, 0, 0),
+      0 0 102px rgb(255, 0, 0),
+      0 0 151px rgb(255, 0, 0);
+}
+@-webkit-keyframes h1 {
+    from {
+      text-shadow: 0 0 20px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+  }
+
+p {
+    color:rgb(255, 242, 0);
+    font-family: 'Back to 1982';
+}
+
+#result {
+    color:rgb(255, 255, 255);
+   font-size: 40px;
+   font-family: 'Press Start 2P';
+   text-align: center;
+   
+}
+
+#Rock {
+    height: 400px;
+    width: auto;
+}
+
+#Scissors {
+    height: 450px;
+    width: auto;
+}
+
+#Paper {
+    height: 500px;
+    width: auto;
+}
+
+input:active {
+    transform: translateY(10px);
+}
